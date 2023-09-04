@@ -44,6 +44,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       color: AppColors.brown,
                       fontSize: 24,
+                      fontFamily: "JuliusSansOne",
                     ),
                   ),
                   SizedBox(width: screenWidth * 0.3,),
@@ -87,6 +88,7 @@ class HomeScreen extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 32,
+                          fontFamily: "Lalezar",
                         ),
                       ),
                       SizedBox(
@@ -94,34 +96,39 @@ class HomeScreen extends StatelessWidget {
                       ),
                       const Text("I am a software engineer building applications using the flutter framework \n\nI am a certified Oracle Cloud Infrastructure Associate. \n\nI am learning backend engineering, cloud computing and DevOps \n\nI love cars, motorsports, rugby, photography and travelling",
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 14,
                         ),
                       ),
 
                     ],
                   ),
-                  Container(
-                    height: screenHeight * 0.32,
-                    width: screenWidth * 0.3,
-                    padding: EdgeInsets.symmetric(
-                        vertical: screenHeight * 0.02,
-                        horizontal: screenWidth * 0.02),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(screenWidth *0.13), bottomRight: Radius.circular(screenWidth * 0.13)),
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
-                          stops: [
-                            0.1,
-                            1.0
-                          ],
-                            colors: [
-                              AppColors.brown,
-                              AppColors.blue,
-                            ],
+                  Stack(
+                    children: [
+                      Container(
+                        height: screenHeight * 0.32,
+                        width: screenWidth * 0.3,
+                        padding: EdgeInsets.symmetric(
+                            vertical: screenHeight * 0.02,
+                            horizontal: screenWidth * 0.02),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(screenWidth *0.13), bottomRight: Radius.circular(screenWidth * 0.13)),
+                            gradient: LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              stops: [
+                                0.1,
+                                1.0
+                              ],
+                                colors: [
+                                  AppColors.brown,
+                                  AppColors.blue,
+                                ],
+                              ),
+                            color: AppColors.brown,
                           ),
-                        color: AppColors.brown,
                       ),
+                      Image.asset("assets/images/profile.png"),
+                    ],
                   ),
                 ],
               ),
