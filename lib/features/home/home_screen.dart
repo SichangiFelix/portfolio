@@ -5,6 +5,8 @@ import 'package:portfolio/features/home/skills_page.dart';
 
 import '../../constants/colors.dart';
 import '../../data/skills_data.dart';
+import 'achievements_page.dart';
+import 'certifications_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -201,14 +203,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             screenHeight: screenHeight,
                             screenWidth: screenWidth),
                         ProjectsPage(screenWidth: screenWidth),
-                        Container(
-                          color: Colors.blue,
-                          child: const Center(child: Text('Page 3')),
-                        ),
-                        Container(
-                          color: Colors.orange,
-                          child: const Center(child: Text('Page 4')),
-                        ),
+                        CertificationsPage(screenHeight: screenHeight, screenWidth: screenWidth),
+                        AchievementsPage(screenHeight: screenHeight),
                       ],
                     ),
                   ),
@@ -221,6 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
 
 
 const kHeaderStyle = TextStyle(
