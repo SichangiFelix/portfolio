@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+List<String> skills = [
+  "Java",
+  "Dart",
+  "Javascript",
+  "SQL",
+  "Python",
+  "Flutter",
+  "Node Js",
+  "Django",
+  "Git",
+  "Github",
+  "My SQL",
+  "Postman",
+  "Bitbucket",
+  "Adobe XD",
+  "Figma",
+  "C Panel",
+  "Lucidchart",
+  "PostgresSQL",
+  "MongoDB",
+  "Cloud Firestore",
+  "Lucidchart",
+];
