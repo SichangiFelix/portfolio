@@ -25,6 +25,14 @@ class ProjectsPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               width: screenWidth * 0.3,
               decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2), // Shadow color
+                    spreadRadius: 2, // Spread radius
+                    blurRadius: 10, // Blur radius
+                    offset: Offset(2, 4), // Offset in the X, Y direction
+                  ),
+                ],
                 color: AppColors.blue,
                 borderRadius: BorderRadius.circular(20),
               ),
