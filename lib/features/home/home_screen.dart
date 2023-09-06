@@ -203,7 +203,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             screenHeight: screenHeight,
                             screenWidth: screenWidth),
                         ProjectsPage(screenWidth: screenWidth),
-                        CertificationsPage(screenHeight: screenHeight, screenWidth: screenWidth),
+                        CertificationsPage(
+                            screenHeight: screenHeight,
+                            screenWidth: screenWidth),
                         AchievementsPage(screenHeight: screenHeight),
                       ],
                     ),
@@ -212,13 +214,85 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          SizedBox(
+            width: screenWidth,
+            height: screenHeight * 0.35,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: screenWidth * 0.02),
+                  child: Text(
+                    "Work Experience",
+                    style: TextStyle(
+                      fontFamily: "Lalezar",
+                      fontSize: 22,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.02,
+                              vertical: screenHeight * 0.03),
+                          padding:  EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: screenWidth * 0.015,
+                          ),
+                          width: screenWidth * 0.3,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: AppColors.blue,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black
+                                    .withOpacity(0.2), // Shadow color
+                                spreadRadius: 2, // Spread radius
+                                blurRadius: 10, // Blur radius
+                                offset: const Offset(
+                                    2, 4), // Offset in the X, Y direction
+                              ),
+                            ],
+                          ),
+                          child:  Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Jumuisha Limited",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                Text(
+                                  "Software developer intern",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                Text(
+                                  "July 2022 - September 2022",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: AppColors.brown,
+                                  ),
+                                ),
+                              ]),
+                        );
+                      }),
+                ),
+              ],
+            ),
+          ),
         ]),
       ),
     );
   }
 }
-
-
 
 const kHeaderStyle = TextStyle(
   color: Colors.black,
