@@ -478,11 +478,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Column(
                   children: [
-                    Expanded(child: SizedBox.shrink()),
+                    const Expanded(child: SizedBox.shrink()),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Column(
+                        const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -510,12 +510,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(width: screenWidth * 0.2,),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "Lets connect",
                               style: TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
@@ -524,9 +524,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   "assets/images/linkedin.png",
                                   width: 28,
                                 ),
-                                SizedBox(width: 8,),
+                                const SizedBox(width: 8,),
                                 Image.asset("assets/images/twitter.png", width: 28),
-                                SizedBox(
+                                const SizedBox(
                                   width: 8,
                                 ),
                                 Image.asset("assets/images/github.png", width: 28),
@@ -536,7 +536,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    Expanded(child: SizedBox.shrink()),
+                    const Expanded(child: SizedBox.shrink()),
                   ],
                 ),
               ],
