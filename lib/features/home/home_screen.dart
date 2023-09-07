@@ -5,6 +5,7 @@ import 'package:portfolio/features/home/projects_page.dart';
 import 'package:portfolio/features/home/skills_page.dart';
 
 import '../../constants/colors.dart';
+import '../../data/referee_data.dart';
 import '../../data/skills_data.dart';
 import '../../data/work_experience.dart';
 import 'achievements_page.dart';
@@ -266,7 +267,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                  Text(
                                   WorkExperiences().workExperiences[index].companyName,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 16,
                                   ),
                                 ),
@@ -274,7 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   WorkExperiences()
                                       .workExperiences[index]
                                       .role,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 14,
                                   ),
                                 ),
@@ -350,11 +351,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                           .logo,
                                       width: 80,
                                     ),
-                                    SizedBox(width: 15,),
+                                    const SizedBox(width: 15,),
                                    Expanded(
                                      child: Text(
                                         LearningPath().institutions[index].institutionName,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 14,
                                         ),
@@ -367,7 +368,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   LearningPath()
                                       .institutions[index]
                                       .major,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 12,
                                   ),
                                 ),
@@ -429,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 6,
+                      itemCount: Connections().referees.length,
                       itemBuilder: (context, index) {
                         return Container(
                           margin: EdgeInsets.symmetric(
@@ -448,21 +449,27 @@ class _HomeScreenState extends State<HomeScreen> {
                                   "assets/images/profile_placeholder.png",
                                   height: 60,
                                 ),
-                                const Text(
-                                  "Bill Jux",
-                                  style: TextStyle(
+                                 Text(
+                                  Connections().referees[index].name,
+                                  style: const TextStyle(
                                     fontSize: 14,
                                   ),
                                 ),
-                                const Text(
-                                  "Software engineer",
-                                  style: TextStyle(
+                                 Text(
+                                  Connections().referees[index].title,
+                                  style: const TextStyle(
                                     fontSize: 14,
                                   ),
                                 ),
-                                const Text(
-                                  "2447213324235",
-                                  style: TextStyle(
+                                 Text(
+                                  Connections().referees[index].phone,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                 Text(
+                                  Connections().referees[index].email,
+                                  style: const TextStyle(
                                     fontSize: 14,
                                   ),
                                 ),
