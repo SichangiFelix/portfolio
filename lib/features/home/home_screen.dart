@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/data/education_data.dart';
 import 'package:portfolio/data/projects_data.dart';
 import 'package:portfolio/features/home/projects_page.dart';
 import 'package:portfolio/features/home/skills_page.dart';
 
 import '../../constants/colors.dart';
 import '../../data/skills_data.dart';
+import '../../data/work_experience.dart';
 import 'achievements_page.dart';
 import 'certifications_screen.dart';
 
@@ -233,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 6,
+                      itemCount: WorkExperiences().workExperiences.length,
                       itemBuilder: (context, index) {
                         return Container(
                           margin: EdgeInsets.symmetric(
@@ -262,20 +264,24 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
-                                  "Jumuisha Limited",
+                                 Text(
+                                  WorkExperiences().workExperiences[index].companyName,
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
                                 ),
-                                const Text(
-                                  "Software developer intern",
+                                 Text(
+                                  WorkExperiences()
+                                      .workExperiences[index]
+                                      .role,
                                   style: TextStyle(
                                     fontSize: 14,
                                   ),
                                 ),
                                 Text(
-                                  "July 2022 - September 2022",
+                                  WorkExperiences()
+                                      .workExperiences[index]
+                                      .timeFrame,
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: AppColors.brown,
@@ -307,7 +313,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 6,
+                      itemCount: LearningPath().institutions.length,
                       itemBuilder: (context, index) {
                         return Container(
                           margin: EdgeInsets.symmetric(
@@ -339,21 +345,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Row(
                                   children: [
                                     Image.asset(
-                                      "assets/images/star.png",
+                                      LearningPath()
+                                          .institutions[index]
+                                          .logo,
                                       width: 80,
                                     ),
-                                    const Text(
-                                      "Kenyatta University",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
+                                    SizedBox(width: 15,),
+                                   Expanded(
+                                     child: Text(
+                                        LearningPath().institutions[index].institutionName,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
                                       ),
-                                    ),
+                                   ),
                                   ],
                                 ),
                                 const Expanded(child: SizedBox.shrink()),
-                                const Text(
-                                  "Bsc. Computer Science",
+                                 Text(
+                                  LearningPath()
+                                      .institutions[index]
+                                      .major,
                                   style: TextStyle(
                                     fontSize: 12,
                                   ),
@@ -362,7 +375,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 10,
                                 ),
                                 Text(
-                                  "GPA - 66.0",
+                                  LearningPath()
+                                      .institutions[index]
+                                      .grade,
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: AppColors.brown,
@@ -380,7 +395,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 const Expanded(child: SizedBox.shrink()),
                                 Text(
-                                  "August 2019 - July 2024",
+                                  LearningPath()
+                                      .institutions[index]
+                                      .timeLine,
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: AppColors.brown,
