@@ -17,8 +17,10 @@ class SkillsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: GridView.builder(
+        physics: NeverScrollableScrollPhysics(),
+
         itemCount: 20,
-        shrinkWrap: true,
+        shrinkWrap: false,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisSpacing: screenWidth * 0.07,
           mainAxisSpacing: screenHeight * 0.1,

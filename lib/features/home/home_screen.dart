@@ -388,7 +388,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 10,
                                 ),
                                 Text(
-                                  "Second class honors - upper division",
+                                  LearningPath()
+                                      .institutions[index]
+                                      .level,
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: AppColors.brown,
